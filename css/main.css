@@ -53,3 +53,7 @@
 	.sideMenu {padding-top: 15px;}
 	.sideMenu a {font-size: 18px;}
 }
+
+#closeBtn {
+	display: none;
+}
