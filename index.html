@@ -11,7 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <base target="_blank">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- font awesome CDN for icons -->
+        <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
         <style>
             body {
                 padding-top: 50px;
@@ -52,13 +57,18 @@
                 background-color: #dd4b39;
             }
 
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+            .uploadIcon {
+              border: 2px dashed white;
+              padding: 17px 72px;
+            }
+            .uploadAnchor {
+              background-color: #2eb398;
+            }
 
+        </style>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body>
+    <body onload="openNav()">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -90,13 +100,21 @@
       </div>
     </nav>
 
-<div id="sideMenu" class="sideMenu">
- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Overview</a>
-  <a href="#">Activity</a>
-  <a href="#">Dearest</a>
-  <a href="#">Folders</a>
-  <a href="#"></a>
+<div id="sideMenu" class="sideMenu"><!-- 
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="#" class="uploadAnchor"><i class="fa fa-upload uploadIcon" aria-hidden="true"></i></a>
+  <div class="listDivider">Main</div>
+    <a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
+    <a href="#"><i class="fa fa-bicycle" aria-hidden="true"></i> Activity</a>
+    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Dearest</a>
+    <a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i> Folders</a>
+  <div class="listDivider">Filters</div>
+    <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Images</a>
+    <a href="#"><i class="fa fa-volume-up" aria-hidden="true"></i> Audio</a>
+    <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Video</a>
+    <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Notes</a>
+    <a href="#"><i class="fa fa-link" aria-hidden="true"></i> Links</a>
+    <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Files</a>
 </div>
 
 <div id="main">
