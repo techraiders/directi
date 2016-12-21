@@ -1,0 +1,91 @@
+/* The side navigation menu */
+
+.sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #232b2d;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+/* The navigation menu links */
+
+.sideMenu a,
+.list-divider {
+    padding: 8px 8px 8px 32px;
+    font-size: 1.2em;
+    color: #6f7b7e;
+    display: block;
+    transition: 0.3s;
+}
+.sideMenu a {
+    text-decoration: none;
+}
+.sideMenu a.active {
+    color: #fff;
+}
+.list-divider {
+    color: #4f585b;
+}
+/* When you mouse over the navigation links, change their color */
+
+.sideMenu a:hover,
+.offcanvas a:focus {
+    color: #f1f1f1;
+}
+/* Position and style the close button (top right corner) */
+
+.sideMenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and(max-height: 450px) {
+    .sideMenu {
+        padding-top: 15px;
+    }
+    .sideMenu a {
+        font-size: 18px;
+    }
+}
+#closeBtn {
+    display: none;
+}
+.uploadIcon {
+    border: 2px dashed white;
+    padding: 17px 60px;
+    color: #fff;
+}
+.uploadAnchor {
+    background-color: #2eb398;
+}
+.openSideMenu {
+    float: left;
+}
+.sideMenu-toggle {
+    position: relative;
+    float: left;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+}
