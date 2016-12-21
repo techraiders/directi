@@ -1,0 +1,16 @@
+{
+	"gallery" : {
+		"pics" : [
+			{ "name" : "img/newyork.jpg", "alt-text" : "newyork" },
+			{"name" : "img/lowereast.jpg", "alt-text" : "alt-text" },
+			{"name" : "img/heaven.jpg", "alt-text" : "heaven"},
+			{"name" : "img/august.png", "alt-text" : "august"}
+		],
+		
+		"videos" : [{		}],
+		"audios" : [{		}],
+		"notes"	: [{		}],
+		"links"	: [{		}],
+		"files"	: [{		}]
+	}
+}

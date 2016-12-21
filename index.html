@@ -2,85 +2,96 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" ng-app="directi">
+<!--<![endif]-->
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/sidemenu.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Droplr – All-in-One Screenshot and File Sharing Tool</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <!-- font awesome CDN for icons -->
-        <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidemenu.css">
+  <link rel="stylesheet" href="css/gallery.css">
+
+  <!-- font awesome CDN for icons -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body ng-controller="galleryController">
+  <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container navbar-padding">
-        <div class="navbar-header">
-          <button type="button" id="openBtn" onclick="openSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu" ><i class="fa fa-bars" aria-hidden="true"></i></button>
-          <button type="button" id="closeBtn" onclick="closeSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu" > <i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-          <button type="button" class="navbar-toggle searchbar-toggle collapsed" data-toggle="collapse" data-target="#searchbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle Search bar</span>
-<!--             <span class="icon-bar"></span>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container navbar-padding">
+      <div class="navbar-header">
+        <button type="button" id="openBtn" onclick="openSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu"><i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <button type="button" id="closeBtn" onclick="closeSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="navbar-toggle searchbar-toggle collapsed" data-toggle="collapse" data-target="#searchbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle Search bar</span>
+          <!--             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span> --> 
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-          <button href="#" class="user visible-xs"><span class="badge notification-count">5</span></button>
-          <a class="navbar-brand" href="#">droplr</a>
-        </div>
-        <div id="searchbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <div class="input-group">
-                <input type="search" placeholder="search" class="form-control form-siteSearch-control">
-                  <span class="input-group-addon search-addon">
-                    <span class="glyphicon glyphicon-search"></span>
-                </span>
-              </div>
-            </div>
-            <a href="#" class="form-control user hidden-xs"><span class="badge notification-count">5</span></a>
-          </form>
-        </div><!--/.navbar-collapse -->
+            <span class="icon-bar"></span> -->
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <button href="#" class="user visible-xs"><span class="badge notification-count">5</span>
+        </button>
+        <a class="navbar-brand" href="#">droplr</a>
       </div>
-    </nav>
+      <div id="searchbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" role="form">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="search" placeholder="search" class="form-control form-siteSearch-control">
+              <span class="input-group-addon search-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+              </span>
+            </div>
+          </div>
+          <a href="#" class="form-control user hidden-xs"><span class="badge notification-count">5</span></a>
+        </form>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </nav>
 
-<div id="sideMenu" class="sideMenu">
-  <a href="#" class="uploadAnchor"><i class="fa fa-upload uploadIcon" aria-hidden="true"></i></a>
-  <div class="list-divider">Main</div>
+  <div id="sideMenu" class="sideMenu">
+    <a href="#" class="uploadAnchor"><i class="fa fa-upload uploadIcon" aria-hidden="true"></i></a>
+    <div class="list-divider">Main</div>
     <a href="#" class="active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
     <a href="#"><i class="fa fa-bicycle" aria-hidden="true"></i> Activity</a>
     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Dearest</a>
     <a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i> Folders</a>
-  <div class="list-divider">Filters</div>
+    <div class="list-divider">Filters</div>
     <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Images</a>
     <a href="#"><i class="fa fa-volume-up" aria-hidden="true"></i> Audio <span class="badge pull-right">8</span></a>
     <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Video</a>
     <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Notes</a>
     <a href="#"><i class="fa fa-link" aria-hidden="true"></i> Links</a>
     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Files</a>
-</div>
+  </div>
 
-<div id="main">
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2>Oveview</h2>
-      </div><!-- col -->
-    </div><!-- row -->
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h4 class="actions-wrapper">
+  <div id="main">
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h2>Oveview</h2>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <h4 class="actions-wrapper">
           <button class="btn-link active-button" role="button" type="button">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
           </button>
@@ -95,31 +106,54 @@
           </button>          
           <span>2 selected items</span>
         </h4>
-      </div><!-- col -->
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="filters-wrapper">
-          <button type="button" class="btn btn-default">Name</button>
-          <button type="button" class="btn btn-default">Size</button>
-          <button type="button" class="btn btn-default">Views</button>
-          <button type="button" class="btn btn-success active-filter">Uploaded</button>
         </div>
-      </div><!-- col -->
+        <!-- col -->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="filters-wrapper">
+            <button type="button" class="btn btn-default">Name</button>
+            <button type="button" class="btn btn-default">Size</button>
+            <button type="button" class="btn btn-default">Views</button>
+            <button type="button" class="btn btn-success active-filter">Uploaded</button>
+          </div>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+      <p><pre> {{gallery.pics | json}}</pre></p>
+      <hr>
+
+      <div class="row">
+        <div class="col gallery-wrapper">
+          <figure ng-repeat="image in gallery.pics">
+            <img ng-src="{{image.name}}" alt="{{image.alt-text}}">
+            <figcaption> {{image.name}} </figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- col -->
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
     </div>
-  <hr>
-  <footer>
-     <p>&copy; Company 2015</p>
-  </footer>
-  </div> <!-- /container -->
-</div> <!-- MAIN --> 
-<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <!-- /container -->
+  </div>
+  <!-- MAIN -->
+  <!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+  </script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dataFactory.js"></script>
+  <script src="js/galleryController.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -128,5 +162,6 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script> -->
-    </body>
+</body>
+
 </html>
