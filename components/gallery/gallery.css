@@ -2,6 +2,45 @@
 .gallery-wrapper {
 	background-color: red;
 }
+
+
+.actions-wrapper > button {
+    margin-right: 20px;
+}
+.actions-wrapper > .btn-link {
+    color: rgba(0, 0, 0, .39);
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .39);
+}
+.actions-wrapper > .active-button {
+    color: #2eb398;
+    border: 1px solid #2eb398;
+}
+.active-filter {
+    background-color: #2eb398;
+    border-color: #2eb398;
+}
+@media (min-width: 768px) {
+    .actions-wrapper {
+        float: left;
+    }
+    .filters-wrapper {
+        float: right;
+    }
+}
+@media (max-width: 348px) {
+    .filters-wrapper > button {
+        margin: 3px;
+    }
+}
+@media (max-width: 208px) {
+    .actions-wrapper span{
+        display: block;
+        margin: 3px 0;
+    }
+}
+
 .gallery-wrapper > figure{
 	float: left;
 	box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.15);
