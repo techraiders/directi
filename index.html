@@ -16,7 +16,6 @@
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/sidemenu.css">
   <link rel="stylesheet" href="css/gallery.css">
 
   <!-- font awesome CDN for icons -->
@@ -28,121 +27,27 @@
   <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container navbar-padding">
-      <div class="navbar-header">
-        <button type="button" id="openBtn" onclick="openSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu"><i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-        <button type="button" id="closeBtn" onclick="closeSideMenu()" class="sideMenu-toggle collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="sideMenu"> <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="navbar-toggle searchbar-toggle collapsed" data-toggle="collapse" data-target="#searchbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle Search bar</span>
-          <!--             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> -->
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        <button href="#" class="user visible-xs"><span class="badge notification-count">5</span>
-        </button>
-        <a class="navbar-brand" href="#">droplr</a>
-      </div>
-      <div id="searchbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-right" role="form">
-          <div class="form-group">
-            <div class="input-group">
-              <input type="search" placeholder="search" class="form-control form-siteSearch-control">
-              <span class="input-group-addon search-addon">
-                    <span class="glyphicon glyphicon-search"></span>
-              </span>
-            </div>
-          </div>
-          <a href="#" class="form-control user hidden-xs"><span class="badge notification-count">5</span></a>
-        </form>
-      </div>
-      <!--/.navbar-collapse -->
-    </div>
+
+  <!-- NAV BAR FIXES AT TOP THAT HOLDS USER, NOTIFICATION ICON AND SEARCH BAR  -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-include="'components/topnav/topnav.html'">
   </nav>
 
-  <div id="sideMenu" class="sideMenu">
-    <a href="#" class="uploadAnchor"><i class="fa fa-upload uploadIcon" aria-hidden="true"></i></a>
-    <div class="list-divider">Main</div>
-    <a href="#" class="active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
-    <a href="#"><i class="fa fa-bicycle" aria-hidden="true"></i> Activity</a>
-    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> Dearest</a>
-    <a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i> Folders</a>
-    <div class="list-divider">Filters</div>
-    <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Images</a>
-    <a href="#"><i class="fa fa-volume-up" aria-hidden="true"></i> Audio <span class="badge pull-right">8</span></a>
-    <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Video</a>
-    <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Notes</a>
-    <a href="#"><i class="fa fa-link" aria-hidden="true"></i> Links</a>
-    <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Files</a>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
-      aria-valuemin="0" aria-valuemax="100" style="width:50%">
-      </div><!-- progress-bar -->
-    </div><!-- progress -->
-  </div><!-- side menu -->
-
-  <div id="main">
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h2>Oveview</h2>
-        </div>
-        <!-- col -->
-      </div>
-      <!-- row -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <h4 class="actions-wrapper">
-          <button class="btn-link active-button" role="button" type="button">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-          </button>
-          <button class="btn-link" role="button" type="button">
-            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
-          </button>
-          <button class="btn-link" role="button" type="button">
-            <i class="fa fa-lock" aria-hidden="true"></i>
-          </button>
-          <button class="btn-link" role="button" type="button">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          </button>          
-          <span>2 selected items</span>
-        </h4>
-        </div>
-        <!-- col -->
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="filters-wrapper">
-            <button type="button" class="btn btn-default">Name</button>
-            <button type="button" class="btn btn-default">Size</button>
-            <button type="button" class="btn btn-default">Views</button>
-            <button type="button" class="btn btn-success active-filter">Uploaded</button>
-          </div>
-        </div>
-        <!-- col -->
-      </div>
-      <!-- row -->
-      <hr>
-
-      <div class="row">
-        <div class="col gallery-wrapper">
-          <figure ng-repeat="image in gallery.pics">
-            <img ng-src="{{galleryPath}}{{image.name}}" alt="{{image.alt-text}}">
-            <figcaption> {{image.name}} <br/> {{image.uploadedOn}}</figcaption>
-          </figure>
-        </div>
-      </div>
-      <!-- col -->
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-    </div>
+  <!-- SIDE MENU AT LEFT THAT TOGGLES WHICH POSITION AND SIDE REMAINS SAME FOR ALL VIEWS -->
+  <aside ng-include="'components/sidemenu/sidemenu.html'"></aside>  
+  
+  <!-- MAIN CONTENT WRAPPER THAT WILL CHANGE ITS CONTENT FOR DIFFERENT VIEWS -->
+  <main id="main">
+    <div class="container" ng-include="'components/gallery/gallery.html'"></div>
     <!-- /container -->
-  </div>
+  </main>
   <!-- MAIN -->
+
+      <footer>
+        <p>
+          Copyright &copy; <a href="http://techraiders.github.io/portfolio/" target="_blank">Navneet Creations</a><br/>
+          All right reserved &reg;
+        </p>
+      </footer>
   <!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')

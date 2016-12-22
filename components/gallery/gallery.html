@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="components/gallery/gallery.css">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h2>Oveview</h2>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <h4 class="actions-wrapper">
+          <button class="btn-link active-button" role="button" type="button">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          </button>
+          <button class="btn-link" role="button" type="button">
+            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+          </button>
+          <button class="btn-link" role="button" type="button">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </button>
+          <button class="btn-link" role="button" type="button">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>          
+          <span>2 selected items</span>
+        </h4>
+        </div>
+        <!-- col -->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="filters-wrapper">
+            <button type="button" class="btn btn-default">Name</button>
+            <button type="button" class="btn btn-default">Size</button>
+            <button type="button" class="btn btn-default">Views</button>
+            <button type="button" class="btn btn-success active-filter">Uploaded</button>
+          </div>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+      <hr>
+
+      <div class="row">
+        <div class="col gallery-wrapper">
+          <figure ng-repeat="image in gallery.pics">
+            <img ng-src="{{galleryPath}}{{image.name}}" alt="{{image.alt-text}}">
+            <figcaption> {{image.name}} <br/> {{image.uploadedOn}}</figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- col -->
