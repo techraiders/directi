@@ -8,6 +8,7 @@
         		$scope.gallery = response.data.gallery;
             console.info($scope.gallery.pics);
       		})
+        $scope.galleryPath = "img/";
     	})
   }
 )();

@@ -77,7 +77,13 @@
     <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Notes</a>
     <a href="#"><i class="fa fa-link" aria-hidden="true"></i> Links</a>
     <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Files</a>
-  </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+      aria-valuemin="0" aria-valuemax="100" style="width:50%">
+      </div><!-- progress-bar -->
+    </div><!-- progress -->
+  </div><!-- side menu -->
 
   <div id="main">
     <div class="container">
@@ -119,14 +125,13 @@
         <!-- col -->
       </div>
       <!-- row -->
-      <p><pre> {{gallery.pics | json}}</pre></p>
       <hr>
 
       <div class="row">
         <div class="col gallery-wrapper">
           <figure ng-repeat="image in gallery.pics">
-            <img ng-src="{{image.name}}" alt="{{image.alt-text}}">
-            <figcaption> {{image.name}} </figcaption>
+            <img ng-src="{{galleryPath}}{{image.name}}" alt="{{image.alt-text}}">
+            <figcaption> {{image.name}} <br/> {{image.uploadedOn}}</figcaption>
           </figure>
         </div>
       </div>
@@ -144,7 +149,7 @@
   </script>
 
   <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/dataFactory.js"></script>
   <script src="js/galleryController.js"></script>

@@ -1,10 +1,14 @@
 {
 	"gallery" : {
 		"pics" : [
-			{ "name" : "img/newyork.jpg", "alt-text" : "newyork" },
-			{"name" : "img/lowereast.jpg", "alt-text" : "alt-text" },
-			{"name" : "img/heaven.jpg", "alt-text" : "heaven"},
-			{"name" : "img/august.png", "alt-text" : "august"}
+			{ "name" : "newyork.jpg", "alt-text" : "newyork", "uploadedOn" : "41 minutes ago" },
+			{"name" : "lowereast.jpg", "alt-text" : "alt-text", "uploadedOn" : "1 hour ago"  },
+			{"name" : "heaven.jpg", "alt-text" : "heaven", "uploadedOn" : "30 minutes ago" },
+			{"name" : "august.png", "alt-text" : "august", "uploadedOn" : "2 hours ago" },
+			{"name" : "stina.png", "alt-text" : "stina", "uploadedOn" : "59 minutes ago" },
+			{"name" : "smallicons.png", "alt-text" : "smallicons", "uploadedOn" : "55 minutes ago" },
+			{"name" : "mochilla.png", "alt-text" : "mochilla", "uploadedOn" : "15 minutes ago" },
+			{"name" : "skyline.png", "alt-text" : "skyline", "uploadedOn" : "10 minutes ago" }
 		],
 		
 		"videos" : [{		}],
