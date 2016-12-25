@@ -14,7 +14,7 @@
 }
 .user {
     border-radius: 50%;
-    background-image: url("../../img/user.jpg");
+    background-image: url("../img/user.jpg");
     position: relative;
 }
 @media (max-width: 767px) {
