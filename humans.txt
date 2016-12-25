@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Navneet Prakash -- Front End Developer -- https://in.linkedin.com/in/techraiders
 
 # THANKS
 
-    <name>
+    Mr. Siddharth Sawant
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    Angular Js, Modernizr
