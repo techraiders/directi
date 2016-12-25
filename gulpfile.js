@@ -4,6 +4,7 @@
 var
 	gulp = require('gulp'),
 	newer = require('gulp-newer'),
+	preprocess = require('gulp-preprocess'),
 	htmlclean = require('gulp-htmlclean'),
 	imagemin = require('gulp-imagemin'),
 	size = require('gulp-size'),
@@ -16,6 +17,16 @@ var
 	source = 'source/',
 	dest = 'build/',
 
+html = {
+	in: source + '*.html',
+	watch: [source + '*.html', source + 'template/**/*'],
+	out: dest,
+	context: {
+		devBuild: devBuild,
+		author: pkg.author,
+		version: pkg.version
+	}
+},
 
 // write here html variable
 
@@ -36,7 +47,16 @@ gulp.task('clean', function() {
 });
 
 // build HTML files
-
+gulp.task('html', function() {
+	var page = gulp.src(html.in).pipe(preprocess({context: html.context}));
+	if (!devBuild) {
+		page = page
+			.pipe(size({title: 'HTML in'}))
+			.pipe(htmlclean())
+			.pipe(size({title: 'HTML out'}));
+	}
+	return page.pipe(gulp.dest(html.out));
+});
 
 // manages images
 gulp.task('images', function() {
